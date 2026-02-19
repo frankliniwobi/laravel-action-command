@@ -1,0 +1,60 @@
+{
+    "name": "frankliniwobi/laravel-action-command",
+    "description": "A Laravel package to generate Action classes via Artisan",
+    "keywords": [
+        "php",
+        "laravel",
+        "actions",
+        "artisan",
+        "package"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Iwobi Okwudili Frank",
+            "email": "iwobiokwudili@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.3"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.18.1",
+        "orchestra/testbench": "^9.5",
+        "pestphp/pest": "^3.5.1",
+        "laravel/framework": "^11.44.2|^12.52.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "FranklinIwobi\\LaravelAction\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "FranklinIwobi\\LaravelAction\\LaravelActionServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "lint": "pint --parallel",
+        "test:unit": "pest --colors=always --parallel",
+        "test": [
+            "@test:unit"
+        ]
+    }
+}
