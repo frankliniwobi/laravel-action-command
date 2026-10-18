@@ -56,7 +56,7 @@ final class LaravelActionCommand extends GeneratorCommand
         /** @var string $name */
         $name = $this->argument('name');
 
-        return Str::of(mb_trim($name))
+        return Str::of(trim($name))
             ->replaceEnd('.php', '')
             ->replaceEnd('Action', '')
             ->append('Action')
@@ -95,7 +95,7 @@ final class LaravelActionCommand extends GeneratorCommand
      */
     private function resolveStubPath(string $stub): string
     {
-        $basePath = $this->laravel->basePath(mb_trim($stub, '/'));
+        $basePath = $this->laravel->basePath(trim($stub, '/'));
 
         return file_exists($basePath)
             ? $basePath
